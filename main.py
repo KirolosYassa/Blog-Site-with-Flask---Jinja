@@ -13,7 +13,7 @@ def home():
 @app.route("/index")
 def index():
     posts = Post()
-    return render_template("index.html")
+    return render_template("index.html", posts=posts.get_posts())
 
 
 @app.route("/contact")
@@ -26,16 +26,12 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/post")
-def post():
-    return render_template("post.html")
-
-
 @app.route("/post/<post_id>")
 def get_specific_post(post_id):
     post_id = int(post_id)
     post = Post()
     single_post = post.get_a_post(post_id=post_id)
+    print(single_post)
     return render_template("post.html", post=single_post)
 
 

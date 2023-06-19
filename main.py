@@ -12,8 +12,7 @@ def home():
 
 @app.route("/index")
 def index():
-    posts = Post()
-    return render_template("index.html", posts=posts.get_posts())
+    home()
 
 
 @app.route("/contact")

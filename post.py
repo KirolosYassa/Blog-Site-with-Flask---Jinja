@@ -14,4 +14,5 @@ class Post:
     def get_a_post(self, post_id):
         for post in self.posts:
             if post["id"] == post_id:
+                post["img"] = f"'/static/assets/img/post-{post_id}.jpg'"
                 return post
